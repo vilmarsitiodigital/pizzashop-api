@@ -29,6 +29,9 @@
 ## 📆 Sobre o projeto
 
 Api para dashboard de pedidos estilo iFood, com magic link de autenticação, cadastro de estabelecimento, atualização de nome e descrição do usuário logado, filtros, paginação e mudança de status dos pedidos.
+Abaixo o projeto WEB:
+
+- [Acessar Pizza Shop WEB](https://github.com/vilmarsitiodigital/pizzashop-web/)
 <br />
 
 ## 🚀 Tecnologias
