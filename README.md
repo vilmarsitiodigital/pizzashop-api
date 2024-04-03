@@ -44,7 +44,7 @@ Tecnologias e ferramentas utilizadas no desenvolvimento do projeto:
 
 ## 💻 Começando
 
-### Requirements
+### Requisitos
 
 **Clone o projeto e acesse a pasta**
 
