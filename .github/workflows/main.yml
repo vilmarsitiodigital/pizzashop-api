@@ -16,6 +16,7 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 20.x
+      - run: npm install pm2@latest -g #install pm2 global     
 
       - uses: oven-sh/setup-bun@v1
       - run: bun install
