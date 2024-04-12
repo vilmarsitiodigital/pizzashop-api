@@ -19,10 +19,10 @@ jobs:
           node-version: 20.x
           
       - name: Install Dependencies
-        run: bun i
+        run: npm i
         
       - name: Build
-        run: bun build
+        run: npm run build
         
       - uses: appleboy/scp-action@master
         with:
