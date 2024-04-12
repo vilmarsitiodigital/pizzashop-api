@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3   
+      - uses: actions/checkout@v4
       - uses: oven-sh/setup-bun@v1
       - run: bun install
         
@@ -34,4 +34,8 @@ jobs:
           script: |
             cd ~/app/pizzashop-api
             bun install
-            pm2 restart all
+
+      - name: Pm2 Restart
+        run: |
+          npm install pm2 -g
+          pm2 restart pizzashop --update-env
