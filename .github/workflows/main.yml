@@ -34,3 +34,4 @@ jobs:
           script: |
             cd ~/app/pizzashop-api
             bun install
+            pm2 restart pizzashop
