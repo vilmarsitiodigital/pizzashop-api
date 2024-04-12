@@ -11,13 +11,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
-      - name: Setup Nodejs
-        uses: actions/setup-node@v3
-        with:
-          node-version: 20.x
-      - run: npm install pm2@latest -g #install pm2 global     
-
+      - uses: actions/checkout@v3   
       - uses: oven-sh/setup-bun@v1
       - run: bun install
         
@@ -40,4 +34,4 @@ jobs:
           script: |
             cd ~/app/pizzashop-api
             bun install
-            pm2 restart pizzashop
+            pm2 restart all
