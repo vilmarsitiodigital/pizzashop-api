@@ -33,5 +33,5 @@ jobs:
           key: ${{ secrets.SSH_KEY }} 
           script: |
             cd ~/app/pizzashop-api
-            bun install
+            bun i
             pm2 restart pizzashop
