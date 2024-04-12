@@ -24,7 +24,7 @@ jobs:
           source: "., !node_modules"
           target: "~/app/pizzashop-api"
           
-      - name: Yarn Update
+      - name: Bun Update
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.SSH_HOST }}
@@ -33,5 +33,5 @@ jobs:
           key: ${{ secrets.SSH_KEY }} 
           script: |
             cd ~/app/pizzashop-api
-            yarn
+            bun install
             pm2 restart pizzashop
