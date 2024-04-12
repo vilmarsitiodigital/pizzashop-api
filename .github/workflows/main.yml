@@ -43,5 +43,4 @@ jobs:
           port: ${{ secrets.SSH_PORT }}
           key: ${{ secrets.SSH_KEY }} 
           script: |
-            cd ~/app/pizzashop-api
-            pm2 restart pizzashop --update-env
+            cd ~/app/pizzashop-api && pm2 restart pizzashop --update-env
