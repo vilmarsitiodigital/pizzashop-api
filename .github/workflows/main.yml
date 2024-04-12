@@ -11,16 +11,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # ...
       - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v1
 
-      - name: Setup Bun
-        uses: oven-sh/setup-bun@v1
-          
-      - name: Install Dependencies
-        run: bun install
-        
-      - name: Build
-        run: bun run build
+      # run any `bun` or `bunx` command
+      - run: bun install
+      - run: bun index.ts
+      - run: bun run build
         
       - uses: appleboy/scp-action@master
         with:
@@ -40,5 +38,5 @@ jobs:
           key: ${{ secrets.SSH_KEY }} 
           script: |
             cd ~/app/pizzashop-api
-            bun i
+            bun install
             pm2 restart pizzashop
