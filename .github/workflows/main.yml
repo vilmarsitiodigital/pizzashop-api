@@ -38,4 +38,5 @@ jobs:
       - name: Pm2 Restart
         run: |
           npm install pm2 -g
+          cd ~/app/pizzashop-api
           pm2 restart pizzashop --update-env
