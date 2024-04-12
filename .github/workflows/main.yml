@@ -34,10 +34,7 @@ jobs:
           script: |
             cd ~/app/pizzashop-api
             bun install
-
-      - name: Install PM2
-        run: npm install pm2 -g      
-
+    
       - name: Pm2 Restart
         uses: appleboy/ssh-action@master
         with:
@@ -46,4 +43,5 @@ jobs:
           port: ${{ secrets.SSH_PORT }}
           key: ${{ secrets.SSH_KEY }} 
           script: |
-            cd ~/app/pizzashop-api && pm2 restart pizzashop --update-env
+            cd ~/app/pizzashop-api
+            pm2 restart --interpreter ~/.bun/bin/bun src/http/server.ts --name pizzashop
