@@ -35,15 +35,21 @@ export const sendAuthenticationLink = new Elysia().post(
 
     // console.log(authLink.toString())
 
-    await resend.emails.send({
-      from: 'Pizza Shop <onboarding@resend.dev>',
-      to: email,
-      subject: '[Pizza Shop] Link para login',
-      react: AuthenticationMagicLinkTemplate({
-        userEmail: email,
-        authLink: authLink.toString(),
-      }),
-    })
+    if (userFromEmail.email === 'demo@vilmarbatista.com.br') {
+      return {
+        link: authLink.toString(),
+      }
+    } else {
+      await resend.emails.send({
+        from: 'Pizza Shop <onboarding@resend.dev>',
+        to: email,
+        subject: '[Pizza Shop] Link para login',
+        react: AuthenticationMagicLinkTemplate({
+          userEmail: email,
+          authLink: authLink.toString(),
+        }),
+      })
+    }
   },
   {
     body: t.Object({
